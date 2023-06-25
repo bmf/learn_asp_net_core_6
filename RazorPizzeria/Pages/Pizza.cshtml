@@ -28,43 +28,24 @@
                     </div>
                 </div>
             </div>
+            
+                @foreach (var pizza in Model.fakePizzaDB)
+                {
+                    <div class="col-4 mb-5">
+                        <img src="~/images/Pizzas/@(pizza.ImageTitle + ".png")" class="w-100" asp-append-version="true" />
+                        <a class="btn btn-primary mt-1"
+                            asp-area=""
+                            asp-page="Checkout/Checkout"
+                            asp-route-ImageTitle="@pizza.ImageTitle"
+                            asp-route-PizzaPrice="@pizza.FinalPrice"
+                            asp-route-PizzaName="@pizza.ImageTitle"
+                        >Get This Pizza</a>
+                        <br/>
+                    </div>
+                }
+                
+
+            
         </div>
-        <div class="row">
-            <div class="col-4 w-33 p-0 m-0">
-                <img class="w-100" src="~/images/Pizzas/Bolognese.png" />
-            </div>
-            <div class="col-4 w-33 p-0">
-                <img class="w-100" src="~/images/Pizzas/Margerita.png" />
-            </div>
-            <div class="col-4 w-33 p-0">
-                <img class="w-100" src="~/images/Pizzas/Hawaiian.png" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4 w-33 p-0 m-0">
-                <img class="w-100" src="~/images/Pizzas/MeatFeast.png" />
-            </div>
-            <div class="col-4 w-33 p-0">
-                <img class="w-100" src="~/images/Pizzas/Mushroom.png" />
-            </div>
-            <div class="col-4 w-33 p-0">
-                <img class="w-100" src="~/images/Pizzas/Pepperoni.png" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-6 w-50 p-0 m-0">
-                <img class="w-100" src="~/images/Pizzas/Seafood.png" />
-            </div>
-            <div class="col-6 w-50 p-0">
-                <img class="w-100" src="~/images/Pizzas/Vegetarian.png" />
-            </div>
-        </div>
-
-
-
-
-
     </div>
-
 </div>
-
