@@ -32,14 +32,15 @@
                 @foreach (var pizza in Model.fakePizzaDB)
                 {
                     <div class="col-4 mb-5">
-                        <img src="~/images/Pizzas/@(pizza.ImageTitle + ".png")" class="w-100" asp-append-version="true" />
-                        <a class="btn btn-primary mt-1"
+                        
+                        <a 
                             asp-area=""
                             asp-page="Checkout/Checkout"
                             asp-route-ImageTitle="@pizza.ImageTitle"
                             asp-route-PizzaPrice="@pizza.FinalPrice"
-                            asp-route-PizzaName="@pizza.ImageTitle"
-                        >Get This Pizza</a>
+                            asp-route-PizzaName="@pizza.ImageTitle">
+                            <img src="~/images/Pizzas/@(pizza.ImageTitle + ".png")" class="w-100 pizza-img" asp-append-version="true" />
+                        </a>
                         <br/>
                     </div>
                 }
